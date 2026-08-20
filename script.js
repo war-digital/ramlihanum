@@ -6,14 +6,14 @@
 const CONST_GROOM_NICKNAME = "Ramli";
 
 const WEDDING_CONFIG = {
-    weddingDate: "2026-08-24T09:00:00+08:00", // Format: YYYY-MM-DDTHH:mm:ss+timezone
+    weddingDate: "2026-08-28T19:00:00+08:00", // Format: YYYY-MM-DDTHH:mm:ss+timezone
     couple: {
         groom: {
             nickname: "Ramli",
             fullName: "Ramli S.H.",
             father: "Bapak Nawir",
             mother: "Ibu Simra",
-            instagram: "Moh_ennur",
+            instagram: "ramlijaya",
             photo: "groom.webp"
         },
         bride: {
@@ -29,8 +29,8 @@ const WEDDING_CONFIG = {
         akad: {
             date: "Senin, 24 Agustus 2026",
             time: "09.00 WITA (Pagi) - Selesai",
-            locationName: "Dusun Bone 1",
-            address: "Tinigi Kecamatan Galang",
+            locationName: "Kediaman Mempelai Pria",
+            address: "Dusun Bone 1 Tinigi Kecamatan Galang",
             mapUrl: "https://maps.app.goo.gl/i6n5ymG64McpqtK39?g_st=atm",
             calendarTitle: "Akad Nikah Ramli & Hanum",
             calendarStart: "2026-08-24T09:00:00"
@@ -38,8 +38,8 @@ const WEDDING_CONFIG = {
         resepsi: {
             date: "Jum'at, 28 Agustus 2026",
             time: "19.00 WITA - Selesai",
-            locationName: "Kediaman Mempelai Wanita",
-            address: "Hanum Salsabiela Marsyidi",
+            locationName: "Kediaman Mempelai Pria",
+            address: "Dusun Bone 1 Tinigi Kecamatan Galang",
             mapUrl: "https://maps.app.goo.gl/i6n5ymG64McpqtK39?g_st=atm",
             calendarTitle: "Resepsi Pernikahan Ramli & Hanum",
             calendarStart: "2026-08-28T19:00:00"
@@ -783,7 +783,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 
                 const datesParam = `${formatCalendarDate(startDate)}/${formatCalendarDate(endDate)}`;
                 
-                const googleCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${datesParam}&details=${encodeURIComponent("Pernikahan Suci Aznur & Masna - Mohon doa restu Anda.")}&location=${encodeURIComponent(loc)}&sf=true&output=xml`;
+                const googleCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${datesParam}&details=${encodeURIComponent("Pernikahan Suci Ramli & Hanum - Mohon doa restu Anda.")}&location=${encodeURIComponent(loc)}&sf=true&output=xml`;
                 
                 window.open(googleCalUrl, "_blank");
             });
