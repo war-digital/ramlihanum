@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Undangan Pernikahan Digital Premium Ramli & Hanum - Adat Bugis">
+    <title>Undangan Pernikahan Premium: Ramli & Hanum</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:wght@300;400;500;600;700&family=Sacramento&family=Great+Vibes&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =================================================================
+         1. SCREEN COVER (GATE)
+         ================================================================= -->
+    <div id="cover-screen" class="cover-screen">
+        <!-- Fullscreen Video Background -->
+        <video id="cover-video" class="video-background" autoplay muted loop playsinline poster="ornamencover.webp">
+            <source src="videocover.mp4" type="video/mp4">
+            Browser Anda tidak mendukung tag video.
+        </video>
+        <div class="video-overlay"></div>
+
+        <!-- Center Content: Oval Frame & Typewriter Text -->
+        <div class="cover-center">
+            <!-- Dynamic Typewriter Text -->
+            <h1 id="typewriter-text" class="typewriter-title"></h1>
+
+            <!-- Soft Brown Transparent Oval Frame -->
+            <div id="oval-frame" class="oval-frame">
+                <div class="oval-pattern-top"></div>
+                <div class="dynamic-initials">
+                    <span class="initial-char char-a">R</span>
+                    <span class="initial-amp">&amp;</span>
+                    <span class="initial-char char-s">H</span>
+                </div>
+                <div class="oval-pattern-bottom"></div>
+            </div>
+        </div>
+
+        <!-- Bottom Content: Slide to Unlock Slider -->
+        <div class="cover-footer fade-in-element">
+            <!-- Custom Slide to Unlock -->
+            <div class="slider-container" id="lock-slider">
+                <div class="slider-bg-text">GESER KE KANAN UNTUK MEMBUKA</div>
+                <div class="slider-progress" id="slider-progress"></div>
+                <div class="slider-handle" id="slider-handle">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================================================================
+         1B. SCREEN COVER 2 (SLIDESHOW & OPEN INVITE GATE)
+         ================================================================= -->
+    <div id="cover-screen-2" class="cover-screen-2 hidden">
+        <!-- Fullscreen Image Slideshow Background (g11, g8, g6) -->
+        <div class="slideshow-container" id="cover2-slideshow">
+            <div class="slide fade active" style="background-image: url('g11.jpg');"></div>
+            <div class="slide fade" style="background-image: url('g8.jpg');"></div>
+            <div class="slide fade" style="background-image: url('g6.jpg');"></div>
+        </div>
+        <div class="slideshow-overlay"></div>
+
+        <!-- Upper Content: Title & Couple Names (Elegant & Mini) -->
+        <div class="cover2-header">
+            <span class="the-wedding-of">THE WEDDING OF</span>
+            <h2 class="couple-names-cover2">Ramli &amp; Hanum</h2>
+        </div>
+
+        <!-- Bottom Content: Guest Name & Open Button (Elegant & Mini) -->
+        <div class="cover2-footer">
+            <span class="to-guest-label">KEPADA YTH. BAPAK/IBU/SAUDARA/I:</span>
+            <h3 id="guest-name-cover2" class="guest-name-cover2">Tamu Undangan</h3>
+
+            <button id="btn-open-invitation" class="btn-open-inv">
+                <i class="far fa-envelope-open"></i> BUKA UNDANGAN
+            </button>
+        </div>
+    </div>
+
+    <!-- =================================================================
+         2. AUDIO CONTROLLER (FLOATING)
+         ================================================================= -->
+    <div id="audio-control" class="audio-control hidden">
+        <button id="audio-toggle-btn" class="audio-btn" aria-label="Toggle Audio">
+            <i class="fas fa-music"></i>
+        </button>
+        <!-- Background Music Audio Tag (musik.mp3) -->
+        <audio id="bg-music" loop preload="auto">
+            <source src="musik.mp3" type="audio/mpeg">
+            Browser Anda tidak mendukung tag audio.
+        </audio>
+    </div>
+
+    <!-- Live Ambient Photo Slideshow Background for Main Page (g1 - g12) -->
+    <div class="main-bg-slideshow-container hidden" id="main-slideshow">
+        <div class="slide fade active" style="background-image: url('g1.jpg');"></div>
+        <div class="slide fade" style="background-image: url('g2.jpg');"></div>
+        <div class="slide fade" style="background-image: url('g3.jpg');"></div>
+        <div class="slide fade" style="background-image: url('g4.jpg');"></div>
+        <div class="slide fade" style="background-image: url('g5.jpg');"></div>
+        <div class="slide fade" style="background-image: url('g6.jpg');"></div>
+        <div class="slide fade" style="background-image: url('g7.jpg');"></div>
+        <div class="slide fade" style="background-image: url('g8.jpg');"></div>
+        <div class="slide fade" style="background-image: url('g9.jpg');"></div>
+        <div class="slide fade" style="background-image: url('g10.jpg');"></div>
+        <div class="slide fade" style="background-image: url('g11.jpg');"></div>
+        <div class="slide fade" style="background-image: url('g12.jpg');"></div>
+        <div class="main-bg-overlay"></div>
+    </div>
+
+    <!-- =================================================================
+         3. MAIN INVITATION CONTENT
+         ================================================================= -->
+    <div id="main-content" class="main-content hidden">
+
+        <!-- ================= SECTION 1: HERO ================= -->
+        <section id="hero" class="section hero-section">
+            <div class="section-container">
+                <div class="ornament-leaf-top"></div>
+
+                <!-- Group Top: Greeting and Couple Name -->
+                <div class="hero-top-group scroll-reveal">
+                    <p class="greeting-accent">You are invited to the wedding of</p>
+                    <h2 class="couple-title">Ramli &amp; Hanum</h2>
+                </div>
+
+                <!-- Group Bottom Area: Date, Countdown, and Scroll Indicator clustered together -->
+                <div class="hero-bottom-area scroll-reveal">
+                    <div class="hero-bottom-group">
+                        <p class="wedding-date-text">Senin, 24 Agustus 2026</p>
+
+                        <!-- Countdown Timer with Rolling Digits -->
+                        <div class="countdown-container" id="countdown">
+                            <div class="countdown-item">
+                                <div class="number rolling-number">
+                                    <div class="rolling-digit-container">
+                                        <div class="rolling-digit-strip" id="days-tens">
+                                            <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+                                        </div>
+                                    </div>
+                                    <div class="rolling-digit-container">
+                                        <div class="rolling-digit-strip" id="days-units">
+                                            <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="label">Hari</span>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="number rolling-number">
+                                    <div class="rolling-digit-container">
+                                        <div class="rolling-digit-strip" id="hours-tens">
+                                            <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+                                        </div>
+                                    </div>
+                                    <div class="rolling-digit-container">
+                                        <div class="rolling-digit-strip" id="hours-units">
+                                            <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="label">Jam</span>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="number rolling-number">
+                                    <div class="rolling-digit-container">
+                                        <div class="rolling-digit-strip" id="minutes-tens">
+                                            <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+                                        </div>
+                                    </div>
+                                    <div class="rolling-digit-container">
+                                        <div class="rolling-digit-strip" id="minutes-units">
+                                            <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="label">Menit</span>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="number rolling-number">
+                                    <div class="rolling-digit-container">
+                                        <div class="rolling-digit-strip" id="seconds-tens">
+                                            <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+                                        </div>
+                                    </div>
+                                    <div class="rolling-digit-container">
+                                        <div class="rolling-digit-strip" id="seconds-units">
+                                            <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="label">Detik</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="scroll-indicator">
+                        <span class="scroll-text">Gulir ke Bawah</span>
+                        <i class="fas fa-chevron-down animate-bounce"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION 2: THE COUPLE ================= -->
+        <section id="mempelai" class="section mempelai-section">
+            <div class="section-container">
+                <div class="section-title-container scroll-reveal">
+                    <span class="section-subtitle">Assalamu’alaikum Warahmatullahi Wabarakatuh</span>
+                    <h2 class="section-title">Kedua Mempelai</h2>
+                    <p class="section-desc">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang
+                        Bapak/Ibu/Saudara/i untuk menghadiri pernikahan kami:</p>
+                </div>
+
+                <div class="couple-cards-container">
+                    <!-- Groom Card -->
+                    <div class="couple-card groom-card scroll-reveal-fade">
+                        <div class="couple-img-wrapper">
+                            <img src="groom.webp" alt="Ramli" class="couple-img">
+                            <div class="gold-frame-border"></div>
+                        </div>
+                        <div class="couple-details">
+                            <h3 class="couple-name">Ramli</h3>
+                            <p class="couple-parent">Putra Kelima dari:</p>
+                            <p class="parent-names">Bapak Nawir<br>&amp; Ibu Simra</p>
+                            <a href="https://instagram.com/ramlijaya" target="_blank" class="social-link"><i
+                                    class="fab fa-instagram"></i> Moh_ennur</a>
+                        </div>
+                        <!-- Traditional Ornaments -->
+                        <img src="ornamen2.png" class="card-ornament ornament-bottom-left" alt="Ornamen Kiri Bawah">
+                        <img src="ornamen1.png" class="card-ornament ornament-bottom-right" alt="Ornamen Kanan Bawah">
+                    </div>
+
+                    <!-- Bride Card -->
+                    <div class="couple-card bride-card scroll-reveal-fade">
+                        <div class="couple-img-wrapper">
+                            <img src="bride.webp" alt="Hanum Salsabiela Marsyidi" class="couple-img">
+                            <div class="gold-frame-border"></div>
+                        </div>
+                        <div class="couple-details">
+                            <h3 class="couple-name">Hanum Salsabiela Marsyidi</h3>
+                            <p class="couple-parent">Putri pertama dari:</p>
+                            <p class="parent-names">Bapak Muhammad Marsyidi (Alm)<br>&amp; Ibu Hj. Indra Purnamasari</p>
+                            <a href="https://instagram.com/inishaaal" target="_blank" class="social-link"><i
+                                    class="fab fa-instagram"></i> inishaaal</a>
+                        </div>
+                        <!-- Traditional Ornaments -->
+                        <img src="ornamen4.png" class="card-ornament ornament-bottom-left" alt="Ornamen Kiri Bawah">
+                        <img src="ornamen3.png" class="card-ornament ornament-bottom-right" alt="Ornamen Kanan Bawah">
+                    </div>
+                </div>
+
+                <!-- Bugis Traditional Quote -->
+                <div class="bugis-quote-box scroll-reveal">
+                    <p class="bugis-quote">"Siri' emmi riassoloreng, deceng emmi riasondoreng."</p>
+                    <p class="bugis-quote-translation">Artinya: Hanya kehormatan yang patut ditegakkan, dan hanya
+                        kebaikanlah yang patut dikejar.</p>
+                    <span class="quote-signature">Ungkapan Leluhur Bugis</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION 3: EVENTS ================= -->
+        <section id="acara" class="section acara-section">
+            <div class="section-container">
+                <div class="section-title-container scroll-reveal">
+                    <span class="section-subtitle">WAKTU &amp; TEMPAT</span>
+                    <h2 class="section-title">Momen Bahagia</h2>
+                </div>
+                <div class="events-grid">
+                    <!-- Akad Nikah Card -->
+                    <div class="event-card akad-card shape-dome-top scroll-reveal-left">
+                        <div class="event-icon">
+                            <i class="fas fa-ring"></i>
+                        </div>
+                        <h3 class="event-title">Akad Nikah</h3>
+                        <div class="event-divider"></div>
+                        <div class="event-details-list">
+                            <div class="event-detail-item">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>Senin, 24 Agustus 2026</span>
+                            </div>
+                            <div class="event-detail-item">
+                                <i class="far fa-clock"></i>
+                                <span>09.00 WITA (Pagi) - Selesai</span>
+                            </div>
+                            <div class="event-detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span><strong>Dusun Bone 1</strong><br>Tinigi Kecamatan Galang</span>
+                            </div>
+                        </div>
+                        <div class="event-actions">
+                            <a href="#" class="btn btn-outline btn-add-calendar" data-title="Akad Nikah Ramli & Hanum"
+                                data-start="2026-08-24T09:00:00" data-loc="Dusun Bone 1 Tinigi Galang"><i
+                                    class="far fa-calendar-plus"></i> Ingatkan Saya</a>
+                        </div>
+                    </div>
+
+                    <!-- Resepsi Card -->
+                    <div class="event-card resepsi-card shape-dome-bottom scroll-reveal-right">
+                        <div class="event-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3 class="event-title">Resepsi Pernikahan</h3>
+                        <div class="event-divider"></div>
+                        <div class="event-details-list">
+                            <div class="event-detail-item">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>Jum'at, 28 Agustus 2026</span>
+                            </div>
+                            <div class="event-detail-item">
+                                <i class="far fa-clock"></i>
+                                <span>19.00 WITA - Selesai</span>
+                            </div>
+                            <div class="event-detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span><strong>Kediaman Mempelai Wanita</strong><br>Hanum Salsabiela Marsyidi</span>
+                            </div>
+                        </div>
+                        <div class="event-actions">
+                            <a href="#" class="btn btn-outline btn-add-calendar"
+                                data-title="Resepsi Pernikahan Ramli & Hanum" data-start="2026-08-28T19:00:00"
+                                data-loc="Kediaman Mempelai Wanita"><i class="far fa-calendar-plus"></i> Ingatkan Saya</a>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- ================= SECTION 4: GALLERY ================= -->
+        <section id="galeri" class="section galeri-section">
+            <div class="section-container">
+                <div class="section-title-container scroll-reveal">
+                    <span class="section-subtitle">DOKUMENTASI</span>
+                    <h2 class="section-title">Galeri Kebahagiaan</h2>
+                </div>
+
+                <!-- Foto Berjalan (Scrolling Photo Marquee) -->
+                <div class="gallery-marquee-container scroll-reveal">
+                    <div class="gallery-marquee-track">
+                        <!-- Set 1 -->
+                        <div class="gallery-marquee-slide"><img src="g3.jpg" alt="Foto Pernikahan 3" loading="lazy">
+                        </div>
+                        <div class="gallery-marquee-slide"><img src="g4.jpg" alt="Foto Pernikahan 4" loading="lazy">
+                        </div>
+                        <div class="gallery-marquee-slide"><img src="g5.jpg" alt="Foto Pernikahan 5" loading="lazy">
+                        </div>
+                        <div class="gallery-marquee-slide"><img src="g7.jpg" alt="Foto Pernikahan 7" loading="lazy">
+                        </div>
+                        <div class="gallery-marquee-slide"><img src="g10.jpg" alt="Foto Pernikahan 10" loading="lazy">
+                        </div>
+                        <div class="gallery-marquee-slide"><img src="g11.jpg" alt="Foto Pernikahan 11" loading="lazy">
+                        </div>
+                        <!-- Set 2 (Duplicate for seamless loop) -->
+                        <div class="gallery-marquee-slide"><img src="g3.jpg" alt="Foto Pernikahan 3" loading="lazy">
+                        </div>
+                        <div class="gallery-marquee-slide"><img src="g4.jpg" alt="Foto Pernikahan 4" loading="lazy">
+                        </div>
+                        <div class="gallery-marquee-slide"><img src="g5.jpg" alt="Foto Pernikahan 5" loading="lazy">
+                        </div>
+                        <div class="gallery-marquee-slide"><img src="g7.jpg" alt="Foto Pernikahan 7" loading="lazy">
+                        </div>
+                        <div class="gallery-marquee-slide"><img src="g10.jpg" alt="Foto Pernikahan 10" loading="lazy">
+                        </div>
+                        <div class="gallery-marquee-slide"><img src="g11.jpg" alt="Foto Pernikahan 11" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kata-Kata Pernikahan (Wedding Quote & Message) -->
+                <div class="gallery-quote-container scroll-reveal">
+                    <p class="gallery-quote-text">
+                        "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari
+                        jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya
+                        diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat
+                        tanda-tanda bagi kaum yang berfikir."
+                    </p>
+                    <span class="gallery-quote-source">QS. Ar-Rum: 21</span>
+                    <div class="quote-divider"></div>
+                    <p class="gallery-quote-pattangan">
+                        Menembus waktu membina cinta, menyatukan langkah menggapai ridha-Nya.
+                    </p>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="gallery-grid scroll-reveal">
+                    <div class="gallery-item" data-index="0">
+                        <img src="g1.jpg" alt="Foto Pernikahan 1" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-index="1">
+                        <img src="g2.jpg" alt="Foto Pernikahan 2" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-index="2">
+                        <img src="g3.jpg" alt="Foto Pernikahan 3" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-index="3">
+                        <img src="g4.jpg" alt="Foto Pernikahan 4" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-index="4">
+                        <img src="g5.jpg" alt="Foto Pernikahan 5" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-index="5">
+                        <img src="g6.jpg" alt="Foto Pernikahan 6" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-index="6">
+                        <img src="g7.jpg" alt="Foto Pernikahan 7" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-index="7">
+                        <img src="g8.jpg" alt="Foto Pernikahan 8" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-index="8">
+                        <img src="g9.jpg" alt="Foto Pernikahan 9" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-index="9">
+                        <img src="g10.jpg" alt="Foto Pernikahan 10" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-index="10">
+                        <img src="g11.jpg" alt="Foto Pernikahan 11" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-index="11">
+                        <img src="g12.jpg" alt="Foto Pernikahan 12" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION 5: RSVP & GUESTBOOK ================= -->
+        <section id="ucapan" class="section ucapan-section">
+            <div class="section-container">
+                <div class="section-title-container scroll-reveal">
+                    <span class="section-subtitle">KONFIRMASI KEHADIRAN</span>
+                    <h2 class="section-title">Buku Tamu &amp; RSVP</h2>
+                </div>
+
+                <div class="guestbook-grid">
+                    <!-- RSVP Form -->
+                    <div class="rsvp-form-container scroll-reveal-left">
+                        <h3 class="form-title">Konfirmasi Kehadiran</h3>
+                        <form id="rsvp-form" class="rsvp-form">
+                            <div class="form-group">
+                                <label for="form-name"><i class="far fa-user"></i> Nama Lengkap</label>
+                                <input type="text" id="form-name" placeholder="Tulis nama Anda..." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-status"><i class="far fa-check-circle"></i> Status Kehadiran</label>
+                                <select id="form-status" required>
+                                    <option value="" disabled selected>Pilih status...</option>
+                                    <option value="Hadir">Hadir</option>
+                                    <option value="Tidak Hadir">Tidak Hadir</option>
+                                    <option value="Masih Ragu">Masih Ragu</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-message"><i class="far fa-comment-dots"></i> Doa Restu / Ucapan</label>
+                                <textarea id="form-message" rows="4"
+                                    placeholder="Tuliskan ucapan dan doa restu terbaik Anda..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-gold btn-block"><i class="far fa-paper-plane"></i>
+                                Kirim Ucapan</button>
+                        </form>
+                    </div>
+
+                    <!-- Guestbook Comments List -->
+                    <div class="guestbook-list-container scroll-reveal-right">
+                        <h3 class="form-title">Doa &amp; Ucapan Tamu</h3>
+                        <div class="comments-scroll-area" id="comments-list">
+                            <!-- Dynamically loaded comments will appear here -->
+                            <div class="comment-item placeholder-comment">
+                                <div class="comment-header">
+                                    <span class="comment-author">Andi Rahman</span>
+                                    <span class="badge status-hadir">Hadir</span>
+                                </div>
+                                <p class="comment-text">Barakallahu lakuma wa baraka 'alaikuma wa jama'a bainakuma fii
+                                    khair. Selamat menempuh hidup baru Ramli dan Hanum! Semoga sakinah mawaddah
+                                    warahmah.</p>
+                                <span class="comment-time">Baru saja</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION 6: WEDDING GIFT ================= -->
+        <section id="hadiah" class="section hadiah-section">
+            <div class="section-container">
+                <div class="section-title-container scroll-reveal">
+                    <span class="section-subtitle">TANDA KASIH</span>
+                    <h2 class="section-title">Kado Digital</h2>
+                    <p class="section-desc">Bagi bapak/ibu/saudara/i yang ingin mengirimkan tanda kasih, dapat
+                        mengirimkannya melalui tombol dompet digital atau rekening di bawah ini:</p>
+                </div>
+
+                <div class="gifts-container">
+                    <!-- Bank Card 1 -->
+                    <div class="gift-card scroll-reveal">
+                        <div class="bank-logo-wrapper">
+                            <span class="bank-name">BANK MANDIRI</span>
+                        </div>
+                        <div class="gift-details">
+                            <p class="account-number" id="bank-acc-1">9000027172791</p>
+                            <p class="account-holder">a.n. Ramli</p>
+                            <button class="btn btn-sm btn-gold btn-copy" data-target="bank-acc-1">
+                                <i class="far fa-copy"></i> Salin Rekening
+                            </button>
+                        </div>
+                    </div>
+
+
+                </div>
+        </section>
+
+        <!-- ================= SECTION 7: FOOTER ================= -->
+        <footer id="footer" class="wedding-footer">
+            <div class="section-container scroll-reveal">
+                <div class="footer-logo">R &amp; H</div>
+                <p class="footer-text">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i
+                    berkenan hadir untuk memberikan doa restu kepada kedua mempelai.</p>
+                <p class="footer-closing">Kami yang berbahagia,</p>
+                <h3 class="footer-names">Ramli &amp; Hanum</h3>
+                <p class="footer-family">Beserta Keluarga Besar</p>
+                <div class="bugis-ornament-footer"></div>
+                <p class="copyright">&copy; 2026 Ramli &amp; Hanum Wedding. All Rights Reserved.</p>
+                <p class="developer-credit">
+                    by <span class="dev-highlight">WARDIGITAL</span><br>
+                    <i class="fab fa-whatsapp"></i> NO WA: <a href="https://wa.me/6281325288213" target="_blank"
+                        class="dev-link">081325288213</a> &nbsp;|&nbsp;
+                    <i class="fab fa-instagram"></i> Nama IG: <a href="https://instagram.com/war.digital_"
+                        target="_blank" class="dev-link">war.digital_</a>
+                </p>
+            </div>
+            <!-- Bottom Corner Ornaments -->
+            <img src="ornamen7.png" class="footer-ornament ornament-bottom-left scroll-reveal" alt="Ornamen Kiri Bawah">
+            <img src="ornamen8.png" class="footer-ornament ornament-bottom-right scroll-reveal"
+                alt="Ornamen Kanan Bawah">
+        </footer>
+    </div>
+
+    <!-- =================================================================
+         4. LIGHTBOX MODAL FOR GALLERY
+         ================================================================= -->
+    <div id="lightbox-modal" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <button class="lightbox-nav lightbox-prev" aria-label="Previous image">&#10094;</button>
+        <div class="lightbox-content-wrapper">
+            <img class="lightbox-img" id="lightbox-img" src="" alt="Perbesar Gambar">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+        <button class="lightbox-nav lightbox-next" aria-label="Next image">&#10095;</button>
+    </div>
+
+    <!-- Toast Notification for Copying -->
+    <div id="toast" class="toast">Rekening berhasil disalin!</div>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
